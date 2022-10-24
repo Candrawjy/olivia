@@ -97,7 +97,7 @@
                 <div class="owl-carousel owl-theme categories_carousel add_bottom_25 mb-4">
                     <?php foreach ($jasa as $jasa) : ?>
                     <div class="item_version_2">
-                        <a href="<?=base_url('jasa/detail/').$jasa->slug?>">
+                        <a href="<?=base_url('jasa/detail/').$jasa->slug_jasa?>">
                             <figure>
                                 <?php if($jasa->foto == NULL) { ?>
                                 <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" alt="" class="owl-lazy" width="350" height="450">
