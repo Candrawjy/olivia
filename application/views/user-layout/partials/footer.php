@@ -1,5 +1,5 @@
     <footer>
-        <div class="wave footer <?php if($this->uri->segment(1) == "search" || $this->uri->segment(1) == "bantuan" || $this->uri->segment(1) == "review"){echo 'gray';}?>"></div>
+        <div class="wave footer <?php if($this->uri->segment(1) == "" || $this->uri->segment(1) == "search" || $this->uri->segment(1) == "bantuan" || $this->uri->segment(1) == "review"){echo 'gray';}?>"></div>
         <div class="container margin_60_40 fix_mobile">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -54,7 +54,7 @@
                     <ul class="additional_links">
                         <li><a href="#">Terms and conditions</a></li>
                         <li><a href="#">Privacy</a></li>
-                        <li><span>&copy; <script>document.write(new Date().getFullYear());</script> Poodies</span></li>
+                        <li><span>&copy; <script>document.write(new Date().getFullYear());</script> Poodies - SV IPB University</span></li>
                     </ul>
                 </div>
             </div>
