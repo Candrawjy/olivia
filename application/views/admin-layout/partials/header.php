@@ -21,4 +21,13 @@
     <link rel="stylesheet" href="<?=base_url('assets/css/sweetalert2.min.css')?>">
     <link rel="stylesheet" href="<?=base_url('assets/dashboard/select2/select2.min.css')?>">
     <link href="<?=base_url('')?>assets/dashboard/css/custom.css" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GER0461JFL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GER0461JFL');
+    </script>
 </head>
