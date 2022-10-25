@@ -34,4 +34,13 @@
     <link href="<?=base_url('')?>assets/css/contacts.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/submit.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/custom.css" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GER0461JFL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GER0461JFL');
+    </script>
 </head>
