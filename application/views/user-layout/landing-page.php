@@ -62,10 +62,10 @@
             <div class="main_title center">
                 <span><em></em></span>
                 <h2>Produk Terbaru</h2>
-                <p>Berbagai produk hasil UMKM yang tersebar di Jabodetabek</p>
+                <p>Berbagai produk hasil UMKM yang tersebar di Jabodebek</p>
             </div>
 
-            <div class="owl-carousel owl-theme categories_carousel">
+            <div class="owl-carousel owl-theme categories_carousel my-5">
                 <?php foreach ($produk as $produk) : ?>
                 <div class="item_version_2">
                     <a href="<?=base_url('umkm/detail/').$produk->slug_umkm?>">
@@ -73,7 +73,7 @@
                             <?php if($produk->foto == NULL) { ?>
                             <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" alt="" class="owl-lazy" width="350" height="450">
                             <?php } else { ?>
-                            <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('uploads/produk/'.$produk->foto)?>" alt="" class="owl-lazy" width="350" height="450">
+                            <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('uploads/produk/'.$produk->foto)?>" alt="" class="owl-lazy" style="width: 350px !important; height: 300px !important; object-fit: cover !important; background-size: cover !important; background-repeat: no-repeat !important;">
                             <?php } ?>
                             <div class="info">
                                 <h3><?=ucfirst($produk->nama_produk)?></h3>
@@ -94,7 +94,7 @@
                     <p>Menyediakan Jasa Kreatif dari Seluruh Anak Muda Indonesia untuk Ikut Andil Membangun UMKM</p>
                 </div>
 
-                <div class="owl-carousel owl-theme categories_carousel add_bottom_25 mb-4">
+                <div class="owl-carousel owl-theme categories_carousel add_bottom_25 my-5">
                     <?php foreach ($jasa as $jasa) : ?>
                     <div class="item_version_2">
                         <a href="<?=base_url('jasa/detail/').$jasa->slug_jasa?>">
@@ -102,7 +102,7 @@
                                 <?php if($jasa->foto == NULL) { ?>
                                 <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" alt="" class="owl-lazy" width="350" height="450">
                                 <?php } else { ?>
-                                <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('uploads/produk/'.$jasa->foto)?>" alt="" class="owl-lazy" width="350" height="450">
+                                <img src="<?=base_url('')?>assets/img/banner-product/preview-product-landing-page-umkm.png" data-src="<?=base_url('uploads/produk/'.$jasa->foto)?>" alt="" class="owl-lazy" style="width: 350px !important; height: 300px !important; object-fit: cover !important; background-size: cover !important; background-repeat: no-repeat !important;">
                                 <?php } ?>
                                 <div class="info">
                                     <h3><?=ucfirst($jasa->nama_produk)?></h3>
@@ -118,7 +118,7 @@
                     <div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
                         <div>
                             <small>Berbagai UMKM dan Jasa</small>
-                            <h3 class="mb-3">Tersedia berbagai jenis UMKM dan Jasa di Jabodetabek</h3>
+                            <h3 class="mb-3">Tersedia berbagai jenis UMKM dan Jasa di Jabodebek</h3>
                             <a href="<?=site_url('search')?>" class="btn_1 gradient">Cari UMKM atau Jasa</a>
                         </div>
                     </div>

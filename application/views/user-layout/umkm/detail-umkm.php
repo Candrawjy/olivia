@@ -15,7 +15,11 @@
 									<div class="score">
 										<span>
 											<br>
+											<?php if($ratings=="0") { ?>
+											<em>Belum Ada Review</em>
+											<?php } else { ?>
 											<em><?=number_format($ratings)?> Review</em>
+											<?php } ?>
 										</span>
 										<strong></strong>
 									</div>
@@ -27,8 +31,6 @@
 								<div class="buttons clearfix d-flex">
 									<span class="magnific-gallery">
 										<a href="<?=base_url('uploads/thumbnail/'.$umkm_jasa['thumbnail'])?>" class="btn_hero" title="Photo" data-effect="mfp-zoom-in"><i class="icon_image"></i>Lihat Foto</a>
-										<!-- <a href="<?=base_url('')?>assets/img/detail_2.jpg" title="Photo title" data-effect="mfp-zoom-in"></a>
-										<a href="<?=base_url('')?>assets/img/detail_3.jpg" title="Photo title" data-effect="mfp-zoom-in"></a> -->
 									</span>
 									<?php if ($this->session->userdata('id_role') == null) { ?>
 									<a href="#" class="btn_hero wishlist-gagal ms-3" id="gagal"><i class="icon_heart"></i>Wishlist</a>
@@ -135,88 +137,35 @@
 				<div class="col-lg-8 list_menu">
 					<section id="section-4">
 						<h4>Ulasan</h4>
-					    <!-- <div class="row add_bottom_30 d-flex align-items-center reviews">
-					        <div class="col-md-3">
-					            <div id="review_summary">
-					                <strong>8.5</strong>
-					                <em>Hebat</em>
-					                <small>Berdasarkan 4 ulasan</small>
-					            </div>
-					        </div>
-					        <div class="col-md-9 reviews_sum_details">
-					            <div class="row">
-					                <div class="col-md-6">
-					                    <h6>Kualitas makanan</h6>
-					                    <div class="row">
-					                        <div class="col-xl-10 col-lg-9 col-9">
-					                            <div class="progress">
-					                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-					                            </div>
-					                        </div>
-					                        <div class="col-xl-2 col-lg-3 col-3"><strong>9.0</strong></div>
-					                    </div>
-
-					                    <h6>Pelayanan</h6>
-					                    <div class="row">
-					                        <div class="col-xl-10 col-lg-9 col-9">
-					                            <div class="progress">
-					                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-					                            </div>
-					                        </div>
-					                        <div class="col-xl-2 col-lg-3 col-3"><strong>9.5</strong></div>
-					                    </div>
-					                </div>
-
-					                <div class="col-md-6">
-					                    <h6>Ketepatan Waktu</h6>
-					                    <div class="row">
-					                        <div class="col-xl-10 col-lg-9 col-9">
-					                            <div class="progress">
-					                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-					                            </div>
-					                        </div>
-					                        <div class="col-xl-2 col-lg-3 col-3"><strong>6.0</strong></div>
-					                    </div>
-
-					                    <h6>Harga</h6>
-					                    <div class="row">
-					                        <div class="col-xl-10 col-lg-9 col-9">
-					                            <div class="progress">
-					                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-					                            </div>
-					                        </div>
-					                        <div class="col-xl-2 col-lg-3 col-3"><strong>6.0</strong></div>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
-					    </div> -->
-
 					     <div id="reviews">
 					     	<?php $review = $this->db->select('umkm_jasa.*, user.*, rating.*')->from("rating")->join('umkm_jasa', 'umkm_jasa.id_umkm_jasa = rating.id_umkm_jasa')->join('user', 'user.id_user = rating.id_user')->where('rating.status', '1')->where('rating.id_umkm_jasa', $umkm_jasa['id_umkm_jasa'])->order_by('rating.created_at','DESC')->get()->result();?>
 
-					     	<?php foreach ($review as $review) : ?>
-					        <div class="review_card">
-					            <div class="row">
-					                <div class="col-md-2 user_info">
-					                    <figure><img src="<?=base_url('')?>assets/img/avatar.jpg" alt=""></figure>
-					                    <h5><?=ucfirst($review->nama_user)?></h5>
-					                </div>
-					                <div class="col-md-10 review_content">
-					                    <div class="clearfix add_bottom_15">
-					                        <span class="rating"><?=$review->jml_rating?><small>/10</small> <strong>Rating</strong></span>
-					                        <em><?= date('D, d-m-Y', strtotime($review->created_at)) ?></em>
-					                    </div>
-					                    <p><?=ucfirst($review->deskripsi)?></p>
-					                </div>
-					            </div>
-					        </div>
-					    	<?php endforeach ?>
+					     	<?php if($ratings=="0") { ?>
+					     		<em>Belum Ada Ulasan</em>
+					     	<?php } else { ?>
+						     	<?php foreach ($review as $review) : ?>
+						        <div class="review_card">
+						            <div class="row">
+						                <div class="col-md-2 user_info">
+						                    <figure><img src="<?=base_url('')?>assets/img/avatar.jpg" alt=""></figure>
+						                    <h5><?=ucfirst($review->nama_user)?></h5>
+						                </div>
+						                <div class="col-md-10 review_content">
+						                    <div class="clearfix add_bottom_15">
+						                        <span class="rating"><?=$review->jml_rating?><small>/10</small> <strong>Rating</strong></span>
+						                        <em><?= date('D, d-m-Y', strtotime($review->created_at)) ?></em>
+						                    </div>
+						                    <p><?=ucfirst($review->deskripsi)?></p>
+						                </div>
+						            </div>
+						        </div>
+						    	<?php endforeach ?>
+						    <?php } ?>
 					    </div>
 					    <?php if ($this->session->userdata('id_role') == null) { ?>
-					    <div class="text-end"><a href="#" class="btn_1 gradient" id="gagal">Berikan Penilaian</a></div>
+					    <div class="text-end"><a href="#" class="btn_1 gradient" id="gagal">Berikan Ulasan</a></div>
 					    <?php } else { ?>
-	                    <div class="text-end"><a href="<?=base_url('review/').$umkm_jasa['slug']?>" class="btn_1 gradient">Berikan Penilaian</a></div>
+	                    <div class="text-end"><a href="<?=base_url('review/').$umkm_jasa['slug']?>" class="btn_1 gradient">Berikan Ulasan</a></div>
 	                    <?php } ?>
 					</section>
 				</div>

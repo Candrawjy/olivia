@@ -62,7 +62,7 @@
                     </form>
                 </div>
                 <div class="col-lg-8 col-md-6 add_bottom_25">
-                    <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Sekolah%20Vokasi%20Institut%20Pertanian%20Bogor,%20Jalan%20Kumbang,%20RT.02/RW.06,%20Babakan,%20Kota%20Bogor,%20Jawa%20Barat&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Sekolah%20Vokasi%20Institut%20Pertanian%20Bogor,%20Jalan%20Kumbang,%20RT.02/RW.06,%20Babakan,%20Kota%20Bogor,%20Jawa%20Barat&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius: 5px;"></iframe>
                 </div>
             </div>
         </div>

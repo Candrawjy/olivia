@@ -3,7 +3,7 @@
 		    <div class="container">
 		    	<div class="row">
 		    		<div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
-		        		<h1>Daftar Jasa Kreatif di sekitar Jabodetabek</h1>
+		        		<h1>Daftar Jasa Kreatif di sekitar Jabodebek</h1>
 		    		</div>
 		    		<div class="col-xl-4 col-lg-5 col-md-5">
 		    			<div class="search_bar_list">
@@ -22,7 +22,7 @@
 				<div class="col-lg-10 offset-lg-1">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="title_small">Kategori Teratas</h2>
+							<h2 class="title_small">Daftar Kategori</h2>
 							<div class="owl-carousel owl-theme categories_carousel_in listing">
 								<?php foreach ($kategori as $kategori) : ?>
 								<div class="item">
