@@ -79,7 +79,8 @@
 							<h6>Catatan :</h6>
 							<ul>
 								<li>Mohon gunakan alamat email aktif saat pendaftaran guna verifikasi email.</li>
-								<li>Jika gagal dalam melakukan register, Anda bisa mencoba pada link <a href="https://poodies.candrawjy.my.id/">berikut ini</a>. Karena di dalam localhost tidak dapat mengirim email.</li>
+								<li>Mohon cek email bagian spam apabila tidak ada email masuk saat register.</li>
+								<!-- <li>Jika gagal dalam melakukan register, Anda bisa mencoba pada link <a href="https://poodies.candrawjy.my.id/">berikut ini</a>. Karena di dalam localhost tidak dapat mengirim email.</li> -->
 							</ul>
 						</div>
 					</div>

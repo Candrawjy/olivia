@@ -50,7 +50,7 @@
                                     <?php } ?>
                                 </td>
                                 <td>
-                                    <?php if($pengguna->email_user != 'candraw71@gmail.com' && $pengguna->email_user != 'admin@gmail.com') { ?>
+                                    <?php if($pengguna->email_user != 'candraw71@gmail.com' && $pengguna->email_user != 'admin@gmail.com' && $pengguna->email_user != 'user@gmail.com' && $pengguna->email_user != 'partner@gmail.com') { ?>
                                     <a href="<?=base_url('kelola-pengguna/edit/').$pengguna->id_user?>" class="btn_1">Edit</a><br>
                                     <a href="<?=base_url('kelola-pengguna/delete/').$pengguna->id_user?>" class="btn_1 gray" id="btn-hapus">Hapus</a>
                                     <?php } else { ?>

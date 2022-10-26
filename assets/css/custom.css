@@ -28,3 +28,43 @@
 .hero_in.detail_page .wrapper .buttons button.liked {
   color: #FF5A5F !important;
 }
+
+@media (max-width: 576px) {
+  .img-produk {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .img-produk {
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .img-produk {
+    width: 350px !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-produk {
+    width: 350px !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
