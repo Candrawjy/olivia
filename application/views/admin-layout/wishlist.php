@@ -18,9 +18,7 @@
                             <small><?=ucfirst($wishlist->nama_jeniskategori)?></small>
                             <h4><?=ucfirst($wishlist->nama_umkmjasa)?></h4>
                             <p><?=ucfirst($wishlist->deskripsi)?></p>
-                            <?php if($this->session->userdata('id_role') == '1') { ?>
                             <p>Wishlist oleh <?=ucfirst($wishlist->nama_user)?></p>
-                            <?php } ?>
                             <ul class="buttons">
                                 <li><a href="<?=base_url('wishlist/remove/').$wishlist->id_wishlist?>" class="btn_1 gray delete"><i class="fa fa-fw fa-times-circle-o"></i> Hapus</a></li>
                             </ul>
