@@ -18,6 +18,7 @@
                         <div class="text-right">
                             <a href="<?=site_url('rating/import')?>" class="btn btn-sm btn-primary">Import Excel</a>
                             <a href="<?=site_url('rating/export')?>" class="btn btn-sm btn-success">Export Excel</a>
+                            <a href="<?=site_url('rating/export-pdf')?>" class="btn btn-sm btn-warning">Export PDF</a>
                         </div>
                         <?php } ?>
                     </div>

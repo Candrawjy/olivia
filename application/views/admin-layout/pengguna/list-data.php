@@ -18,6 +18,7 @@
                         <div class="text-right">
                             <a href="<?=site_url('kelola-pengguna/import')?>" class="btn btn-sm btn-primary">Import Excel</a>
                             <a href="<?=site_url('kelola-pengguna/export')?>" class="btn btn-sm btn-success">Export Excel</a>
+                            <a href="<?=site_url('kelola-pengguna/export-pdf')?>" class="btn btn-sm btn-warning">Export PDF</a>
                         </div>
                         <?php } ?>
                     </div>

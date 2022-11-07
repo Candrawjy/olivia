@@ -267,5 +267,22 @@ class PenggunaController extends CI_Controller {
         $writer = new Xlsx($spreadsheet);
         $writer->save("php://output");
     }
+
+    public function export_pdf_pengguna()
+    {
+        $this->load->library('pdfgenerator');
+        
+        $data['title'] = 'Laporan Data Pengguna';
+        $data['pengguna'] = $this->Pengguna_M->getDataUser()->result();
+        $data['jumlah_pengguna'] = $this->db->from("user")->where('id_role !=', '1')->get()->num_rows();
+        
+        $file_pdf = 'data_pengguna';
+        $paper = 'A4';
+        $orientation = "landscape";
+        
+        $html = $this->load->view('admin-layout/pengguna/export-pdf', $data, true);       
+        
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+    }
     
 }

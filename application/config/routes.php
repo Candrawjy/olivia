@@ -117,6 +117,7 @@ $route['rating/import'] = 'RatingController/view_import_data_rating';
 $route['rating/import/data'] = 'RatingController/import_data_rating';
 $route['rating/import/format'] = 'RatingController/download_format_import_rating';
 $route['rating/export'] = 'RatingController/export_data_rating';
+$route['rating/export-pdf'] = 'RatingController/export_pdf_rating';
 
 // Pengguna Route
 $route['kelola-pengguna'] = 'PenggunaController/list_data_pengguna';
@@ -127,3 +128,4 @@ $route['kelola-pengguna/import'] = 'PenggunaController/view_import_data_pengguna
 $route['kelola-pengguna/import/data'] = 'PenggunaController/import_data_pengguna';
 $route['kelola-pengguna/import/format'] = 'PenggunaController/download_format_import_pengguna';
 $route['kelola-pengguna/export'] = 'PenggunaController/export_data_pengguna';
+$route['kelola-pengguna/export-pdf'] = 'PenggunaController/export_pdf_pengguna';

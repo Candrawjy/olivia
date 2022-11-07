@@ -199,4 +199,21 @@ class RatingController extends CI_Controller {
 		$writer = new Xlsx($spreadsheet);
 		$writer->save("php://output");
 	}
+
+	public function export_pdf_rating()
+	{
+		$this->load->library('pdfgenerator');
+        
+        $data['title'] = 'Laporan Data Rating';
+        $data['rating'] = $this->Rating_M->getDataRating()->result();
+		$data['rating_diterima'] = $this->db->from("rating")->where('status', '1')->get()->num_rows();
+        
+        $file_pdf = 'data_rating';
+        $paper = 'A4';
+        $orientation = "portrait";
+        
+		$html = $this->load->view('admin-layout/rating/export-pdf', $data, true);	    
+        
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+	}
 }

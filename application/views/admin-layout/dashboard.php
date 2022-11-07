@@ -29,15 +29,14 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="detail_modalLabel">Informasi Hasil UTS PABWEB - Candra Wijaya</h5>
+                                <h5 class="modal-title" id="detail_modalLabel">Informasi Hasil Tugas PABWEB - Kelompok 1 INF A P2</h5>
                                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <ul>
-                                    <li>Sistem login dan register dapat diakses melalui link berikut : <a href="<?=site_url('login')?>">Login</a> | <a href="<?=site_url('register')?>">Register</a></li>
-                                    <li>CRUD yang saya kerjakan adalah CRUD : 
+                                    <li>CRUD yang kami kerjakan adalah CRUD : 
                                         <ul>
                                             <li>
                                                 menu <a href="<?=site_url('rating')?>">Rating</a> dan di dalam detail UMKM/Jasa Kreatif
@@ -47,7 +46,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>Import & Export data ke excel yang saya kerjakan adalah :
+                                    <li>Import & Export data ke excel yang kami kerjakan adalah :
                                         <ul>
                                             <li>
                                                 menu <a href="<?=site_url('rating')?>">Rating</a>
@@ -57,7 +56,17 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>FusionCharts yang saya kerjakan adalah :
+                                    <li>Export data ke pdf yang kami kerjakan adalah :
+                                        <ul>
+                                            <li>
+                                                menu <a href="<?=site_url('rating')?>">Rating</a>
+                                            </li>
+                                            <li>
+                                                dan menu <a href="<?=site_url('kelola-pengguna')?>">Data Pengguna</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Menampilkan chart yang kami kerjakan adalah :
                                         <ul>
                                             <li>
                                                 Data rata-rata rating berdasarkan UMKM/Jasa Kreatif dan perbandingan pengguna berdasarkan perannya yang dapat diakses di <a href="<?=site_url('dashboard')?>">dashboard</a>
@@ -75,7 +84,7 @@
                                 </ul>
                                 <div class="text-right">
                                     <p>Tertanda,</p>
-                                    <p>Candra Wijaya <br>(J0303201030) - INF A P2</p>
+                                    <p>Kelompok 1 <br>INF A P2</p>
                                 </div>
                             </div>
                         </div>
