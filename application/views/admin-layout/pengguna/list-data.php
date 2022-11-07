@@ -1,5 +1,5 @@
 <?php
-    require 'assets/fusioncharts/integrations/php/samples/includes/fusioncharts.php';
+    require 'assets\fusioncharts\integrations\php\samples\includes\fusioncharts.php';
 ?>
     <div class="content-wrapper">
         <div class="container-fluid">
