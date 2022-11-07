@@ -40,7 +40,7 @@
                             <div class="card-header" role="tab">
                                 <h5>
                                     <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false">
-                                        <i class="indicator icon_plus"></i>Bagaimana cara mengunggah iklan di Poodies?
+                                        <i class="indicator icon_plus"></i>Bagaimana cara mengunggah iklan atau bergabung menjadi mitra di Poodies?
                                     </a>
                                 </h5>
                             </div>
@@ -61,7 +61,37 @@
                             </div>
                             <div id="collapseThree" class="collapse" role="tabpanel" data-bs-parent="#accordion_group">
                                 <div class="card-body">
-                                    <p>Anda dapat menghubungi UMKM atau Jasa Kreatif yang Anda inginkan melalui informasi kontak yang tersedia dimasing-masing detail UMKM atau Jasa Kreatif.</p>
+                                    <p>Anda dapat menghubungi UMKM atau Jasa Kreatif yang Anda inginkan melalui informasi kontak yang tersedia dimasing-masing detail UMKM dan Jasa Kreatif.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab">
+                                <h5>
+                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false">
+                                        <i class="indicator icon_plus"></i>Bagaimana cara memberikan review di Poodies?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" role="tabpanel" data-bs-parent="#accordion_group">
+                                <div class="card-body">
+                                    <p>Anda dapat memberikan review apabila Anda sudah memiliki akun dan login. Setelah itu, Anda dapat memberikan review di halaman detail masing-masing UMKM dan Jasa Kreatif.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab">
+                                <h5>
+                                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false">
+                                        <i class="indicator icon_plus"></i>Bagaimana cara melihat wishlist Saya?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" role="tabpanel" data-bs-parent="#accordion_group">
+                                <div class="card-body">
+                                    <p>Anda dapat melihat wishlist Anda di halaman dashboard. Sebelum itu, Anda harus memiliki akun dan melakukan login untuk membuka dashboard.</p>
                                 </div>
                             </div>
                         </div>

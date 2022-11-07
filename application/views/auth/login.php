@@ -62,6 +62,7 @@
 							</button>
 						</div>
 						<div class="modal-body">
+							<h6>Akun Admin :</h6>
 							<div class="form-group">
 								<label>Email</label>
 								<input type="text" class="form-control" placeholder="admin@gmail.com" readonly value="admin@gmail.com">
@@ -69,6 +70,26 @@
 							<div class="form-group">
 								<label>Password</label>
 								<input type="text" class="form-control" placeholder="admin12" readonly value="admin123">
+							</div>
+
+							<h6 class="mt-5">Akun User :</h6>
+							<div class="form-group">
+								<label>Email</label>
+								<input type="text" class="form-control" placeholder="user@gmail.com" readonly value="user@gmail.com">
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="text" class="form-control" placeholder="" readonly value="12345">
+							</div>
+
+							<h6 class="mt-5">Akun Partner :</h6>
+							<div class="form-group">
+								<label>Email</label>
+								<input type="text" class="form-control" placeholder="partner@gmail.com" readonly value="partner@gmail.com">
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="text" class="form-control" placeholder="" readonly value="12345">
 							</div>
 						</div>
 					</div>
