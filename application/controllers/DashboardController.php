@@ -16,10 +16,12 @@ class DashboardController extends CI_Controller {
 	{
 		$data['title'] = "Dashboard";
 
+		$data['rating_diterima'] = $this->db->from("rating")->where('status', '1')->get()->num_rows();
+		$data['jumlah_pengguna'] = $this->db->from("user")->where('id_role !=', '1')->get()->num_rows();
 		$data['rating'] = $this->db->from("rating")->get()->num_rows();
 		$data['umkm'] = $this->db->from("umkm_jasa")->where('jenis', '1')->get()->num_rows();
 		$data['jasa'] = $this->db->from("umkm_jasa")->where('jenis', '2')->get()->num_rows();
-		$data['bookmark'] = $this->db->from("wishlist")->where('id_user', $this->session->userdata('id_user'))->get()->num_rows();
+		$data['bookmark'] = $this->db->from("wishlist")->get()->num_rows();
 
 		$this->load->view('admin-layout/partials/header', $data);
 		$this->load->view('admin-layout/partials/navbar');

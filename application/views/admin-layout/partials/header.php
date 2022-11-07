@@ -21,4 +21,7 @@
     <link rel="stylesheet" href="<?=base_url('assets/css/sweetalert2.min.css')?>">
     <link rel="stylesheet" href="<?=base_url('assets/dashboard/select2/select2.min.css')?>">
     <link href="<?=base_url('')?>assets/dashboard/css/custom.css" rel="stylesheet">
+
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script> 
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script> 
 </head>

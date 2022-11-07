@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class PenggunaController extends CI_Controller {
 
     public function __construct()
@@ -31,6 +36,7 @@ class PenggunaController extends CI_Controller {
     {
         $data['title'] = 'List Data Pengguna';
         $data['pengguna'] = $this->Pengguna_M->getDataUser()->result();
+        $data['jumlah_pengguna'] = $this->db->from("user")->where('id_role !=', '1')->get()->num_rows();
 
         $this->load->view('admin-layout/partials/header', $data);
         $this->load->view('admin-layout/partials/navbar');
@@ -145,6 +151,121 @@ class PenggunaController extends CI_Controller {
             $this->session->set_flashdata('success', 'Seluruh Data Berhasil Dihapus');
             redirect('kelola-pengguna');
         }
+    }
+
+    public function download_format_import_pengguna()
+    {
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="format_import_pengguna.xlsx"');
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Peran (1=Admin/2=User/3=Partner)');
+        $sheet->setCellValue('B1', 'Nama Lengkap');
+        $sheet->setCellValue('C1', 'Alamat Email');
+        $sheet->setCellValue('D1', 'Password');
+        $sheet->setCellValue('E1', 'No Handphone');
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save("php://output");
+    }
+
+    public function view_import_data_pengguna()
+    {
+        $data['title'] = "Import Data Pengguna";
+
+        $this->load->view('admin-layout/partials/header', $data);
+        $this->load->view('admin-layout/partials/navbar');
+        $this->load->view('admin-layout/pengguna/import-data');
+        $this->load->view('admin-layout/partials/footer');
+    }
+
+    public function import_data_pengguna()
+    {
+        $upload_file = $_FILES['upload_file']['name'];
+        $extension = pathinfo($upload_file, PATHINFO_EXTENSION);
+
+        if (empty($_FILES['upload_file']['name'])) {
+            $this->session->set_flashdata('error', 'Data Import Kosong');
+            redirect('kelola-pengguna/import');
+        } else if($extension != 'csv' && $extension != 'xls' && $extension != 'xlsx' && $extension != 'CSV' && $extension != 'XLS' && $extension != 'XLSX') {
+            $this->session->set_flashdata('error', 'Format File Tidak Didukung');
+            redirect('kelola-pengguna/import');
+        } else {
+            if ($extension == 'csv') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
+            } else if($extension == 'xls') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            }
+
+            $spreadsheet = $reader->load($_FILES['upload_file']['tmp_name']);
+            $sheetdata = $spreadsheet->getActiveSheet()->toArray();
+
+            // echo '<pre>';
+            // print_r($sheetdata);
+
+            $sheetcount = count($sheetdata);
+            if ($sheetcount > 0) {
+                for ($i=1; $i < $sheetcount; $i++) { 
+                    $id_role = $sheetdata[$i][0];
+                    $nama_user = $sheetdata[$i][1];
+                    $email_user = $sheetdata[$i][2];
+                    $password = $sheetdata[$i][3];
+                    $nohp_user = $sheetdata[$i][4];
+
+                    $data[] = array(
+                        'id_role' => $id_role,
+                        'nama_user' => $nama_user,
+                        'email_user' => $email_user,
+                        'password' => md5($password),
+                        'nohp_user' => $nohp_user,
+                        'is_active' => '1',
+                    );
+                }
+                $this->Pengguna_M->import_data_pengguna($data);
+
+                if ($this->db->affected_rows() > 0) {
+                    $this->session->set_flashdata('success', 'Data Berhasil Diimport');
+                    redirect('kelola-pengguna');
+                } else {
+                    $this->session->set_flashdata('success', 'Gagal Mengimport Data');
+                    redirect('kelola-pengguna');
+                }
+            }
+        }
+    }
+
+    public function export_data_pengguna()
+    {
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="data_pengguna.xlsx"');
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No.');
+        $sheet->setCellValue('B1', 'Nama Lengkap');
+        $sheet->setCellValue('C1', 'Alamat Email');
+        $sheet->setCellValue('D1', 'No Handphone');
+        $sheet->setCellValue('E1', 'Peran (1=Admin/2=User/3=Partner)');
+        $sheet->setCellValue('F1', 'Status (0=Belum Verifikasi/1=Terverifikasi)');
+
+        $listuser = $this->Pengguna_M->getDataUser()->result();
+        $list = 2;
+        $no = 1;
+        foreach ($listuser as $user) {
+            $sheet->setCellValue('A'.$list,$no++);
+            $sheet->setCellValue('B'.$list,$user->nama_user);
+            $sheet->setCellValue('C'.$list,$user->email_user);
+            $sheet->setCellValue('D'.$list,$user->nohp_user);
+            $sheet->setCellValue('E'.$list,$user->id_role);
+            $sheet->setCellValue('F'.$list,$user->is_active);
+            $list++;
+        }
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save("php://output");
     }
     
 }

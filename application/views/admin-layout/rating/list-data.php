@@ -1,3 +1,6 @@
+<?php
+    require 'assets\fusioncharts\integrations\php\samples\includes\fusioncharts.php';
+?>
     <div class="content-wrapper">
         <div class="container-fluid">
             <ol class="breadcrumb">
@@ -9,7 +12,15 @@
             <h2></h2>
             <div class="box_general padding_bottom">
                 <div class="header_box version_2">
-                    <h6><?=$title?></h6>
+                    <div class="d-flex justify-content-between">
+                        <h6><?=$title?></h6>
+                        <?php if ($this->session->userdata('id_role') == '1') { ?>
+                        <div class="text-right">
+                            <a href="<?=site_url('rating/import')?>" class="btn btn-sm btn-primary">Import Excel</a>
+                            <a href="<?=site_url('rating/export')?>" class="btn btn-sm btn-success">Export Excel</a>
+                        </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -55,6 +66,57 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box_general padding_bottom">
+                        <div class="header_box version_2">
+                            <h6>Grafik Rating</h6>
+                        </div>
+                        <div class="card-body">
+                            <?php if($rating_diterima != '0') {?>
+                                <?php 
+                                    $rating = $this->db->query('SELECT *, COUNT(id_rating) AS jml_rating, SUM(jml_rating) AS sum_rating FROM rating JOIN umkm_jasa ON umkm_jasa.id_umkm_jasa=rating.id_umkm_jasa JOIN user ON user.id_user=rating.id_user WHERE status=1 GROUP BY(rating.id_umkm_jasa)')->result_array();
+
+                                    if ($rating) {
+                                        $arrData = array(
+                                            "chart" => array(
+                                                "caption" => "Rata-Rata Rating Berdasarkan UMKM/Jasa Kreatif",
+                                                "showValues" => "0",
+                                                "theme" => "fusion"
+                                            )
+                                        );
+
+                                        $arrData["data"] = array();
+
+                                        foreach($rating as $rating) {
+                                            array_push($arrData["data"], array(
+                                                "label" => $rating['nama_umkmjasa'],
+                                                "value" => $rating['sum_rating']/$rating['jml_rating']
+                                                )
+                                            );
+                                        }
+
+                                        $jsonEncodedData = json_encode($arrData);
+
+                                        $columnChart = new FusionCharts("column2D", "myFirstChart" , 700, 400, "chart-1", "json", $jsonEncodedData);
+
+                                        $columnChart->render();
+                                    }
+                                ?>
+                            <div class="row table-responsive">
+                                <div class="col-lg-8 offset-lg-2">
+                                    <div id="chart-1"></div>
+                                </div>
+                            </div>
+                            <?php } else { ?>
+                            <div class="col-lg-12 text-center">
+                                <h6>Tidak ada data rating yang diterima, maka grafik tidak dapat ditampilkan</h6>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

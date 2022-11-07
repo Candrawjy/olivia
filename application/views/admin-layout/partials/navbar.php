@@ -53,7 +53,7 @@
                     </a>
                     <ul class="sidenav-second-level <?php if($this->uri->segment(1) != "kelola-produk"){echo 'collapse';}?>" id="collapseProduk">
                         <li>
-                            <a href="<?=site_url('kelola-produk')?>" class="<?php if($this->uri->segment(1) == "kelola-produk" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
+                            <a href="<?=site_url('kelola-produk')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
                         </li>
                         <li>
                             <a href="<?=site_url('kelola-produk/add')?>" class="<?php if($this->uri->segment(1) == "kelola-produk" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
@@ -72,7 +72,7 @@
                             <a href="<?=site_url('kelola-kategori')?>" class="<?php if($this->uri->segment(1) == "kelola-kategori" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Kategori</a>
                         </li>
                         <li>
-                            <a href="<?=site_url('kelola-kategori/add')?>" class="<?php if($this->uri->segment(1) == "kelola-kategori" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
+                            <a href="<?=site_url('kelola-kategori/add')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Tambah Data</a>
                         </li>
                     </ul>
                 </li>
@@ -83,10 +83,10 @@
                     </a>
                     <ul class="sidenav-second-level <?php if($this->uri->segment(1) != "kelola-pengguna"){echo 'collapse';}?>" id="collapsePengguna">
                         <li>
-                            <a href="<?=site_url('kelola-pengguna')?>" class="<?php if($this->uri->segment(1) == "kelola-pengguna" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
+                            <a href="<?=site_url('kelola-pengguna')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
                         </li>
                         <li>
-                            <a href="<?=site_url('kelola-pengguna/add')?>" class="<?php if($this->uri->segment(1) == "kelola-pengguna" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
+                            <a href="<?=site_url('kelola-pengguna/add')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Tambah Data</a>
                         </li>
                     </ul>
                 </li>
@@ -111,9 +111,9 @@
                 </li>
                 <?php if ($this->session->userdata('id_role') == '2') { ?>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
-                    <a class="nav-link" href="http://wa.me/6281311293294?text=Halo,%20Poodies!%20Saya%20ingin%20menjadi%20mitra%20Poodies." target="_blank">
+                    <a class="nav-link" href="http://wa.me/6281311293294?text=Halo,%20Poodies!%20Saya%20ingin%20pasang%20iklan%20disini." target="_blank">
                         <i class="fa fa-fw fa-whatsapp"></i>
-                        <span class="nav-link-text">Bergabung Menjadi Mitra</span>
+                        <span class="nav-link-text">Pasang Iklan</span>
                     </a>
                 </li>
                 <?php } ?>

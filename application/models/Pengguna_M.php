@@ -59,5 +59,10 @@ class Pengguna_M extends CI_Model {
         $this->db->where($where);
         $this->db->delete($table);
     }
+
+    public function import_data_pengguna($data)
+    {
+        return $this->db->insert_batch('user', $data);
+    }
    
 }

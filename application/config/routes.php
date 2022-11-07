@@ -113,9 +113,17 @@ $route['kelola-produk/delete/(:num)'] = 'ProdukController/delete_data_produk/$1'
 $route['rating'] = 'RatingController/list_data_rating';
 $route['rating/edit/(:num)'] = 'RatingController/edit_data_rating/$1';
 $route['rating/delete/(:num)'] = 'RatingController/delete_data_rating/$1';
+$route['rating/import'] = 'RatingController/view_import_data_rating';
+$route['rating/import/data'] = 'RatingController/import_data_rating';
+$route['rating/import/format'] = 'RatingController/download_format_import_rating';
+$route['rating/export'] = 'RatingController/export_data_rating';
 
 // Pengguna Route
 $route['kelola-pengguna'] = 'PenggunaController/list_data_pengguna';
 $route['kelola-pengguna/add'] = 'PenggunaController/add_data_pengguna';
 $route['kelola-pengguna/edit/(:num)'] = 'PenggunaController/edit_data_pengguna/$1';
 $route['kelola-pengguna/delete/(:num)'] = 'PenggunaController/delete_data_pengguna/$1';
+$route['kelola-pengguna/import'] = 'PenggunaController/view_import_data_pengguna';
+$route['kelola-pengguna/import/data'] = 'PenggunaController/import_data_pengguna';
+$route['kelola-pengguna/import/format'] = 'PenggunaController/download_format_import_pengguna';
+$route['kelola-pengguna/export'] = 'PenggunaController/export_data_pengguna';
