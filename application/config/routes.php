@@ -65,7 +65,7 @@ $route['auth/verify/test'] = 'AuthController/verify_test';
 // Landing Route
 $route['/'] = 'LandingController/index';
 $route['beranda'] = 'LandingController/index';
-// $route['berita'] = 'LandingController/berita';
+$route['berita'] = 'LandingController/berita';
 $route['bantuan'] = 'LandingController/bantuan';
 $route['kontak-kami'] = 'LandingController/kontak_kami';
 $route['tentang-kami'] = 'LandingController/tentang_kami';

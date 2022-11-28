@@ -21,16 +21,6 @@ class LandingController extends CI_Controller {
 		$this->load->view('user-layout/partials/footer');
 	}
 
-	public function berita()
-	{
-		$data['title'] = "Berita";
-
-		$this->load->view('user-layout/partials/header', $data);
-		$this->load->view('user-layout/partials/navbar-landing');
-		$this->load->view('user-layout/berita');
-		$this->load->view('user-layout/partials/footer');
-	}
-
 	public function bantuan()
 	{
 		$data['title'] = "Bantuan";
@@ -58,6 +48,23 @@ class LandingController extends CI_Controller {
 		$this->load->view('user-layout/partials/header', $data);
 		$this->load->view('user-layout/partials/navbar-landing');
 		$this->load->view('user-layout/tentang');
+		$this->load->view('user-layout/partials/footer');
+	}
+
+	public function berita()
+	{
+		$data['title'] = "Berita";
+		$url = "https://newsapi.org/v2/top-headlines?country=id&category=business&apiKey=59ad660d50c94810b690e17c4a8a549b";
+		$opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
+		$context = stream_context_create($opts);
+		$html = file_get_contents($url, false,$context);
+		$html = json_decode($html);
+		$data['berita'] = $html;
+		// $data['berita'] = json_decode(file_get_contents('http://newsapi.org/v2/top-headlines?country=id&apiKey=59ad660d50c94810b690e17c4a8a549b'));
+
+		$this->load->view('user-layout/partials/header', $data);
+		$this->load->view('user-layout/partials/navbar');
+		$this->load->view('user-layout/berita');
 		$this->load->view('user-layout/partials/footer');
 	}
 
