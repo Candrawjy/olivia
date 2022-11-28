@@ -32,6 +32,7 @@
     <link href="<?=base_url('')?>assets/css/help.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/review.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/contacts.css" rel="stylesheet">
+    <link href="<?=base_url('')?>assets/css/blog.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/submit.css" rel="stylesheet">
     <link href="<?=base_url('')?>assets/css/custom.css" rel="stylesheet">
 </head>
