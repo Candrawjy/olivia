@@ -50,4 +50,24 @@ class DashboardController extends CI_Controller {
 		$this->load->view('admin-layout/partials/footer');
 	}
 
+	public function api_produk()
+	{
+		$data['title'] = "API Produk";
+
+		$this->load->view('admin-layout/partials/header', $data);
+		$this->load->view('admin-layout/partials/navbar');
+		$this->load->view('admin-layout/api-produk');
+		$this->load->view('admin-layout/partials/footer');
+	}
+
+	public function api_berita()
+	{
+		$data['title'] = "API Berita";
+
+		$this->load->view('admin-layout/partials/header', $data);
+		$this->load->view('admin-layout/partials/navbar');
+		$this->load->view('admin-layout/api-berita');
+		$this->load->view('admin-layout/partials/footer');
+	}
+
 }
