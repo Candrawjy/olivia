@@ -74,10 +74,24 @@
                                             <li>
                                                 Serta, masing-masing chart dapat dilihat pada menu :
                                                 <ul>
-                                                    <li><a href="rating">Data Rating</a></li>
-                                                    <li><a href="kelola-pengguna">Data Pengguna</a></li>
+                                                    <li><a href="<?=site_url('rating')?>">Data Rating</a></li>
+                                                    <li><a href="<?=site_url('kelola-pengguna')?>">Data Pengguna</a></li>
                                                 </ul>
                                                 yang terletak dibagian paling bawah.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Pembuatan dan penggunaan API yang kami kerjakan adalah :
+                                        <ul>
+                                            <li>
+                                                Pembuatan API Produk : <a href="<?=site_url('api-produk')?>">Lihat Disini</a>
+                                            </li>
+                                            <li>
+                                                dan Penggunaan API Berita : 
+                                                <ul>
+                                                    <li><a href="<?=site_url('berita')?>">Implementasi</a></li>
+                                                    <li><a href="<?=site_url('api-berita')?>">Detail Penggunaan API Berita</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
