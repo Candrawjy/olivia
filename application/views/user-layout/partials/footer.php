@@ -133,7 +133,11 @@
         var data = [
         <?php foreach ($lokasi as $data) : ?>
             <?php if ($data->jenis == 1) { $datas = 'umkm'; } else { $datas = 'jasa'; } ?>
-            {"loc":[<?=$data->lat_long?>], "title": "<?=$data->nama_umkmjasa?>", "thumbnail":"<?=base_url('uploads/thumbnail/'.$data->thumbnail)?>", "jenis": "<?=$data->target?>", "slug": "<?=$data->slug?>", "datas": "<?=$datas?>"},
+            <?php if($data->thumbnail == NULL) { ?>
+                {"loc":[<?=$data->lat_long?>], "title": "<?=$data->nama_umkmjasa?>", "thumbnail":"<?=base_url('')?>assets/img/preview/preview-umkm.png", "jenis": "<?=$data->target?>", "slug": "<?=$data->slug?>", "datas": "<?=$datas?>"},
+            <?php } else { ?>
+                {"loc":[<?=$data->lat_long?>], "title": "<?=$data->nama_umkmjasa?>", "thumbnail":"<?=base_url('uploads/thumbnail/'.$data->thumbnail)?>", "jenis": "<?=$data->target?>", "slug": "<?=$data->slug?>", "datas": "<?=$datas?>"},
+            <?php } ?>
         <?php endforeach ?>
         ];
 
