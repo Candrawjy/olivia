@@ -84,6 +84,8 @@ $route['review/(:any)'] = 'UserAPIController/review/$1';
 $route['dashboard'] = 'DashboardController/index';
 $route['wishlist-saya'] = 'DashboardController/wishlist';
 $route['profil'] = 'DashboardController/profil';
+$route['api-produk'] = 'DashboardController/api_produk';
+$route['api-berita'] = 'DashboardController/api_berita';
 
 // UMKM Route
 $route['kelola-umkm'] = 'UmkmJasaController/list_data_umkm';
@@ -129,3 +131,10 @@ $route['kelola-pengguna/import/data'] = 'PenggunaController/import_data_pengguna
 $route['kelola-pengguna/import/format'] = 'PenggunaController/download_format_import_pengguna';
 $route['kelola-pengguna/export'] = 'PenggunaController/export_data_pengguna';
 $route['kelola-pengguna/export-pdf'] = 'PenggunaController/export_pdf_pengguna';
+
+// Produk API Route
+$route['api/produk'] = 'ProdukAPIController/data';
+$route['api/produk/(:num)'] = 'ProdukAPIController/produk/$1';
+$route['api/produk/add'] = 'ProdukAPIController/addproduk';
+$route['api/produk/delete'] = 'ProdukAPIController/deleteproduk';
+$route['api/produk/update'] = 'ProdukAPIController/updateproduk';

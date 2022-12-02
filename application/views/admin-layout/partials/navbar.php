@@ -53,7 +53,7 @@
                     </a>
                     <ul class="sidenav-second-level <?php if($this->uri->segment(1) != "kelola-produk"){echo 'collapse';}?>" id="collapseProduk">
                         <li>
-                            <a href="<?=site_url('kelola-produk')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
+                            <a href="<?=site_url('kelola-produk')?>" class="<?php if($this->uri->segment(1) == "kelola-produk" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
                         </li>
                         <li>
                             <a href="<?=site_url('kelola-produk/add')?>" class="<?php if($this->uri->segment(1) == "kelola-produk" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
@@ -72,7 +72,7 @@
                             <a href="<?=site_url('kelola-kategori')?>" class="<?php if($this->uri->segment(1) == "kelola-kategori" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Kategori</a>
                         </li>
                         <li>
-                            <a href="<?=site_url('kelola-kategori/add')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Tambah Data</a>
+                            <a href="<?=site_url('kelola-kategori/add')?>" class="<?php if($this->uri->segment(1) == "kelola-kategori" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
                         </li>
                     </ul>
                 </li>
@@ -83,12 +83,24 @@
                     </a>
                     <ul class="sidenav-second-level <?php if($this->uri->segment(1) != "kelola-pengguna"){echo 'collapse';}?>" id="collapsePengguna">
                         <li>
-                            <a href="<?=site_url('kelola-pengguna')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
+                            <a href="<?=site_url('kelola-pengguna')?>" class="<?php if($this->uri->segment(1) == "kelola-pengguna" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Lihat Data</a>
                         </li>
                         <li>
-                            <a href="<?=site_url('kelola-pengguna/add')?>" class="<?php if($this->uri->segment(1) == "" && $this->uri->segment(2) == ""){echo 'bg-secondary';}?>">Tambah Data</a>
+                            <a href="<?=site_url('kelola-pengguna/add')?>" class="<?php if($this->uri->segment(1) == "kelola-pengguna" && $this->uri->segment(2) == "add"){echo 'bg-secondary';}?>">Tambah Data</a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item <?php if($this->uri->segment(1) == "api-produk"){echo 'active';}?>" data-toggle="tooltip" data-placement="right" title="Reviews">
+                    <a class="nav-link" href="<?=site_url('api-produk')?>">
+                        <i class="fa fa-fw fa-fire"></i>
+                        <span class="nav-link-text">API Data Produk</span>
+                    </a>
+                </li>
+                <li class="nav-item <?php if($this->uri->segment(1) == "api-berita"){echo 'active';}?>" data-toggle="tooltip" data-placement="right" title="Reviews">
+                    <a class="nav-link" href="<?=site_url('api-berita')?>">
+                        <i class="fa fa-fw fa-newspaper-o"></i>
+                        <span class="nav-link-text">API Data Berita</span>
+                    </a>
                 </li>
                 <?php } ?>
                 <li class="nav-item <?php if($this->uri->segment(1) == "rating"){echo 'active';}?>" data-toggle="tooltip" data-placement="right" title="Reviews">
