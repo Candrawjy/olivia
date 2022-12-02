@@ -179,8 +179,8 @@
             alert(e.message);
         }
         map.on('locationerror', onLocationError);
-        // map.locate({setView: true, maxZoom: 50});
-        map.locate({maxZoom: 13});
+        map.locate({setView: true, maxZoom: 50});
+        // map.locate({maxZoom: 13});
     </script>
     <?php } ?>
 </body>
