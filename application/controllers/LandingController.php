@@ -68,4 +68,15 @@ class LandingController extends CI_Controller {
 		$this->load->view('user-layout/partials/footer');
 	}
 
+	public function lokasi()
+	{
+		$data['title'] = "Lokasi";
+		$data['lokasi'] = $this->Landing_M->getDataLokasi()->result();
+
+		$this->load->view('user-layout/partials/header', $data);
+		$this->load->view('user-layout/partials/navbar');
+		$this->load->view('user-layout/lokasi');
+		$this->load->view('user-layout/partials/footer');
+	}
+
 }

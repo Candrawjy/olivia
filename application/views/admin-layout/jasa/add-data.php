@@ -87,7 +87,17 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Letak Lokasi</label>
+                                <div id="map" style="border-radius: 8px; width: 100%; height: 400px"></div>
+                            </div>
+                        </div>
                         <div class="col-lg-6 mb-4">
+                            <div class="form-group">
+                                <label>Posisi Lokasi <small class="text-danger">(Berdasarkan titik lokasi yang dipilih atau masukkan latitude dan longitude)</small></label>
+                                <input type="text" class="form-control rounded-3" name="lat_long" id="lat_long" placeholder="Pilih posisi dari map atau masukkan latitude dan longitude">
+                            </div>
                             <div class="form-group">
                                 <label>Foto Thumbnail <small class="text-danger">(Format : JPG/PNG, Max. 5mb)</small></label>
                                 <input class="form-control" type="file" name="userfile[]">

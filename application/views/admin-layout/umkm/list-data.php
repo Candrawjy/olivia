@@ -25,6 +25,7 @@
                                 <th>Kota</th>
                                 <th>Lokasi</th>
                                 <th>Thumbnail</th>
+                                <th>Letak Lokasi</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -49,6 +50,7 @@
                                     <img src="<?=base_url('assets/img/preview/preview-kategori-umkm.png')?>" alt="Thumbnail" class="img-fluid" width="80%" height="80%">
                                     <?php } ?>
                                 </td>
+                                <td><?=$umkm->lat_long?></td>
                                 <td>
                                     <a href="<?=base_url('kelola-umkm/edit/').$umkm->id_umkm_jasa?>" class="btn_1">Edit</a><br>
                                     <a href="<?=base_url('kelola-umkm/delete/').$umkm->id_umkm_jasa?>" class="btn_1 gray" id="btn-hapus">Hapus</a>

@@ -61,6 +61,7 @@ class UmkmJasaController extends CI_Controller {
 				$this->form_validation->set_rules('kota', 'Lokasi', 'required|trim');
 				$this->form_validation->set_rules('lokasi', 'Link Google Maps', 'required|trim');
 				$this->form_validation->set_rules('id_jeniskategori', 'Kategori Utama', 'required|trim');
+				$this->form_validation->set_rules('lat_long', 'Letak Lokasi', 'required|trim');
 
 				if (empty($_FILES['userfile']['name'])) {
 					$this->form_validation->set_rules('userfile', 'Thumbnail', 'required');
@@ -122,6 +123,7 @@ class UmkmJasaController extends CI_Controller {
 						'id_jeniskategori' => $this->input->post('id_jeniskategori'),
 						'jenis' => $this->input->post('jenis'),
 						'slug' => $slug,
+						'lat_long' => $this->input->post('lat_long'),
 
 						'thumbnail' => $dataInfo[0]['file_name'],
 					);
@@ -184,6 +186,10 @@ class UmkmJasaController extends CI_Controller {
 				$this->form_validation->set_rules('id_jeniskategori', 'Kategori Utama', 'required|trim');
 			}
 
+			if ($this->input->post('lat_long')) {
+				$this->form_validation->set_rules('lat_long', 'Letak Lokasi', 'required|trim');
+			}
+
 			$this->form_validation->set_message('required', '%s masih kosong, harap diisi');
 			$this->form_validation->set_error_delimiters('<span class="help-block text-danger">', '</span>');
 
@@ -241,6 +247,7 @@ class UmkmJasaController extends CI_Controller {
 					'lokasi' => $this->input->post('lokasi'),
 					'id_jeniskategori' => $this->input->post('id_jeniskategori'),
 					'jenis' => $this->input->post('jenis'),
+					'lat_long' => $this->input->post('lat_long'),
 					'slug' => $slug,
 
 					'thumbnail' => $thumbnail,
@@ -319,6 +326,7 @@ class UmkmJasaController extends CI_Controller {
 				$this->form_validation->set_rules('kota', 'Lokasi', 'required|trim');
 				$this->form_validation->set_rules('lokasi', 'Link Google Maps', 'required|trim');
 				$this->form_validation->set_rules('id_jeniskategori', 'Kategori Utama', 'required|trim');
+				$this->form_validation->set_rules('lat_long', 'Letak Lokasi', 'required|trim');
 
 				if (empty($_FILES['userfile']['name'])) {
 					$this->form_validation->set_rules('userfile', 'Thumbnail', 'required');
@@ -378,6 +386,7 @@ class UmkmJasaController extends CI_Controller {
 						'lokasi' => $this->input->post('lokasi'),
 						'id_jeniskategori' => $this->input->post('id_jeniskategori'),
 						'jenis' => $this->input->post('jenis'),
+						'lat_long' => $this->input->post('lat_long'),
 						'slug' => $slug,
 
 						'thumbnail' => $dataInfo[0]['file_name'],
@@ -441,6 +450,10 @@ class UmkmJasaController extends CI_Controller {
 				$this->form_validation->set_rules('id_jeniskategori', 'Kategori Utama', 'required|trim');
 			}
 
+			if ($this->input->post('lat_long')) {
+				$this->form_validation->set_rules('lat_long', 'Letak Lokasi', 'required|trim');
+			}
+
 			$this->form_validation->set_message('required', '%s masih kosong, harap diisi');
 			$this->form_validation->set_error_delimiters('<span class="help-block text-danger">', '</span>');
 
@@ -498,6 +511,7 @@ class UmkmJasaController extends CI_Controller {
 					'lokasi' => $this->input->post('lokasi'),
 					'id_jeniskategori' => $this->input->post('id_jeniskategori'),
 					'jenis' => $this->input->post('jenis'),
+					'lat_long' => $this->input->post('lat_long'),
 					'slug' => $slug,
 
 					'thumbnail' => $thumbnail,

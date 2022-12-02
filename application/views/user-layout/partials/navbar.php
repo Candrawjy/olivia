@@ -26,6 +26,7 @@
                     <li><a href="<?=site_url('umkm')?>">UMKM</a></li>
                     <li><a href="<?=site_url('jasa')?>">Jasa</a></li>
                     <!-- <li><a href="<?=site_url('search')?>">Cari</a></li> -->
+                    <li><a href="<?=site_url('lokasi')?>">Lokasi</a></li>
                     <li><a href="<?=site_url('berita')?>">Berita</a></li>
                     <?php if ($this->session->userdata('id_role') != null) { ?>
                     <li><a href="<?=site_url('dashboard')?>">Dashboard</a></li>

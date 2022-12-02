@@ -69,6 +69,7 @@ $route['berita'] = 'LandingController/berita';
 $route['bantuan'] = 'LandingController/bantuan';
 $route['kontak-kami'] = 'LandingController/kontak_kami';
 $route['tentang-kami'] = 'LandingController/tentang_kami';
+$route['lokasi'] = 'LandingController/lokasi';
 
 // User API Route
 $route['umkm'] = 'UserAPIController/list_umkm';

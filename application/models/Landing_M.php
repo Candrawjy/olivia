@@ -29,4 +29,15 @@ class Landing_M extends CI_Model
         return $query;
     }
 
+    public function getDataLokasi()
+    {
+        $this->db->select('user.*, jenis_kategori.*, umkm_jasa.*');
+        $this->db->from('umkm_jasa');
+        $this->db->join('user', 'user.id_user = umkm_jasa.id_user');
+        $this->db->join('jenis_kategori', 'jenis_kategori.id_jeniskategori = umkm_jasa.id_jeniskategori');
+        $this->db->where('umkm_jasa.lat_long !=', '');
+        $query = $this->db->get();
+        return $query;
+    }
+
 }
