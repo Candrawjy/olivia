@@ -164,7 +164,7 @@
                     iconSize: [60, 60],
                 });
                 marker = new L.Marker(new L.latLng(loc), {icon: myIcon, title: title});
-                marker.bindPopup("<p class='text-center'><b>Nama : </b>" + title + " <br> <b>Jenis : </b>" + jenis + "</p> <center><a href='<?=site_url('')?>"+datas+"/detail/"+slug+"' class='text-center'><b>Lihat Detail</b></a></center></p>").openPopup();
+                marker.bindPopup("<p class='text-center'><img src='"+thumbnail+"' class='img-fluid rounded mb-3'> <h5 class='text-center'>" + title + "</h5><h6 class='text-center'>" + jenis + "</h6></p> <center><a href='<?=site_url('')?>"+datas+"/detail/"+slug+"' class='btn btn-primary btn-sm text-white'>Lihat Detail</a></center></p>").openPopup();
                 markersLayer.addLayer(marker);
         }
 
