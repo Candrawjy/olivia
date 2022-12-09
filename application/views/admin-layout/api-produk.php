@@ -24,7 +24,7 @@
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>API data produk dapat dilihat pada link berikut : <a href="<?=site_url('api/produk')?>">Lihat Data Produk</a></p>
-                                Hasil jika memakai postman :
+                                Hasil jika memakai postman dengan url https://pabw-kel-1.candrawjy.my.id/api/produk dengan method GET :
                                 <img src="<?=base_url('assets/dashboard/img/api/lihat-data.png')?>" alt="Icon" class="img-fluid mb-3">
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <div id="collapseOned" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>API data produk berdasarkan ID Produk dapat dilihat pada link berikut : <a href="<?=site_url('api/produk/11')?>">Lihat Data Produk By ID Produk</a></p>
-                                Hasil jika memakai postman :
+                                Hasil jika memakai postman dengan url https://pabw-kel-1.candrawjy.my.id/api/produk/11 dengan method GET :
                                 <img src="<?=base_url('assets/dashboard/img/api/lihat-data-by-id.png')?>" alt="Icon" class="img-fluid mb-3">
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>API tambah data produk dapat dilihat pada link berikut : <a href="<?=site_url('api/produk/add')?>">Tambah Data Produk</a></p>
-                                Hasil jika memakai postman :
+                                Hasil jika memakai postman dengan url https://pabw-kel-1.candrawjy.my.id/api/produk/add dengan method POST :
                                 <img src="<?=base_url('assets/dashboard/img/api/tambah-data.png')?>" alt="Icon" class="img-fluid mb-3">
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>API update data produk dapat dilihat pada link berikut : <a href="<?=site_url('api/produk/update')?>">Update Data Produk</a></p>
-                                Hasil jika memakai postman :
+                                Hasil jika memakai postman dengan url https://pabw-kel-1.candrawjy.my.id/api/produk/update dengan method PUT :
                                 <img src="<?=base_url('assets/dashboard/img/api/update-data.png')?>" alt="Icon" class="img-fluid mb-3">
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                         <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>API hapus data produk dapat dilihat pada link berikut : <a href="<?=site_url('api/produk/delete')?>">Hapus Data Produk</a></p>
-                                Hasil jika memakai postman :
+                                Hasil jika memakai postman dengan url https://pabw-kel-1.candrawjy.my.id/api/produk/delete dengan method DELETE :
                                 <img src="<?=base_url('assets/dashboard/img/api/delete-data.png')?>" alt="Icon" class="img-fluid mb-3">
                             </div>
                         </div>
